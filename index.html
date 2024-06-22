@@ -160,24 +160,26 @@
     var S = {
         init: function () {
             S.Drawing.init('.canvas');
-            var a =Math.floor(Math.random() * 5+1);
+            let list = [];
+            list.push('瑶瑶|遇见你|很幸运|#time"');
+            list.push('瑶瑶|我爱你|#time"');
+            list.push('宝贝|我会一直|在你身边|#time');
+            list.push('思念|涌上心头时|想要|越过方寸的屏幕|拥抱你|#time');
+            list.push('他们|有好多|关于爱的|道理|但我|有你|#time');
+            list.push('你是我|漫漫余生里|斩钉截铁|的梦想|#time');
+            list.push('朝暮|与年岁共往|然后与你|一同行至|天光|#time');
+            list.push('可爱|不是长久之计|可爱你是|长久之计|#time');
+            list.push('山河远阔|人间烟火|无一是你|无一不是你|#time');
+            list.push('你是|往日的情书|是日落的|余情未了|是路人脚下|不停生长的风|也是我|喜欢的人|#time');
+            list.push('两个心愿：|你在身边|在你身边|#time');
+            list.push('想到|能和你|共度余生|我就对|余生|充满期待|#time');
+
+
+
+            var a = Math.floor(Math.random() * list.length + 1);
 			//想说的话
-            if (a==1) {
-                document.body.classList.add('body--ready');
-                S.UI.simulate("瑶瑶|遇见你|很幸运|#time");
-            }else if (a==2){
-                document.body.classList.add('body--ready1');
-                S.UI.simulate("瑶瑶|我爱你|#time");               
-            }else if (a==3) {
-                 document.body.classList.add('body--ready2');
-                 S.UI.simulate("Nice|to|Meet|You|#countdown 3|#time");                
-            }else if (a==4) {
-                 document.body.classList.add('body--ready3');
-                 S.UI.simulate("瑶瑶|以后的路|我|陪着|你|走|#countdown 3|#time");
-            }else{
-                 document.body.classList.add('body--ready4');
-                 S.UI.simulate("宝贝|我会一直|在你身边|#time ");                
-            }
+            document.body.classList.add('body--ready3');
+            S.UI.simulate(list[a]);
 
             S.Drawing.loop(function () {
                 S.Shape.render();
